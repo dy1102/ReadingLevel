@@ -36,7 +36,7 @@ private:
     int m_nlesson;//记录多少章节
 //    qint64 position;
     int m_linecount;
-    QVector<int> m_pos;//记录行号
+    QVector<int> m_pos;//记录章节开始的位置
     QVector<int> m_lin;//记录行号
     QVector<QString> m_str;//行内容,Lesson<1、2、3.....100>
 };

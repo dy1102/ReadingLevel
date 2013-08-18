@@ -7,6 +7,10 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     m_nlesson=0;
+    ui->horizontalSlider->setMinimum(0);
+    ui->horizontalSlider->setMaximum(6);
+    ui->horizontalSlider->setValue(0);
+
 }
 
 
@@ -39,7 +43,8 @@ void MainWindow::on_pushButton_clicked()
             m_lin.push_back(m_linecount);//压入当前Lesson所在行号
             m_str.push_back(m_ReadLine);//章节名
             m_ReadLine=m_ReadLine.trimmed();
-            ui->listWidget->addItem(m_ReadLine);
+            ui->listWidget->addItem(m_ReadLine);//below,both works.
+//            ui->listWidget->insertItem(m_nlesson,m_ReadLine);//above,both works.
         }
     }
 }
@@ -54,15 +59,16 @@ void MainWindow::on_listWidget_itemDoubleClicked(QListWidgetItem *item)
     }
     QTextStream in(&file);
     QString tmp;
-    in.seek(m_pos.at(4));//m_pos.at(i)为某一章节的开始,Lesson所在行
-    tmp+=m_str.at(4);//获取章节名
+    int nrow=ui->listWidget->row(item);//获取行号
+    in.seek(m_pos.at(nrow));//m_pos.at(nrow)为某一章节的开始,Lesson所在行，定位作用
+    tmp+=m_str.at(nrow);//获取章节名
     tmp+="\r\n";
-    for(int i=m_lin.at(4);i<m_lin.at(5)-1;i++)//m_pos.at(i+1)-1为某一章节的结束，循环标示一个章节的开始行和结束行
+    for(int i=m_lin.at(nrow);i<m_lin.at(nrow+1)-1;i++)//m_pos.at(nrow+1)-1为某一章节的结束，循环表示一个章节的开始行和结束行
     {
         tmp+=in.readLine();//读一行
         tmp+="\r\n";
-        ui->textEdit->setText(tmp);
     }
+    ui->textEdit->setText(tmp);//显示OK的文本
     //    in.seek(m_pos.at(4));
     //    while(in.pos()!=m_pos.at(5))
     //    {
