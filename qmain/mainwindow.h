@@ -25,10 +25,13 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();  
 
+    void slotFind();
 private slots:
     void on_pushButton_clicked();
 
     void on_listWidget_itemDoubleClicked(QListWidgetItem *item);
+
+    void on_horizontalSlider_valueChanged(int value);
 
 private:
     Ui::MainWindow *ui;

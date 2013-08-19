@@ -10,6 +10,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->horizontalSlider->setMinimum(0);
     ui->horizontalSlider->setMaximum(6);
     ui->horizontalSlider->setValue(0);
+    ui->horizontalSlider->setPageStep(1);
 
 }
 
@@ -78,4 +79,40 @@ void MainWindow::on_listWidget_itemDoubleClicked(QListWidgetItem *item)
     //    QString qstr = QString::number(m_nlesson);
     //    QMessageBox::information(this,"Information",qstr);
     //    ui->textEdit->setText(qstr);
+}
+
+void MainWindow::on_horizontalSlider_valueChanged(int value)
+{
+//    QString tmp=QString::number(value);
+//    ui->textEdit->setText(tmp);
+
+    QPalette palette = ui->textEdit->palette();
+    palette.setColor(QPalette::Highlight, QColor::fromRgb(51, 153, 255)); //天蓝色
+    palette.setColor(QPalette::HighlightedText, QColor::fromRgb(255, 255, 255)); //白色
+    palette.setColor(QPalette::Text,QColor::fromRgb(139,139,0));
+    ui->textEdit->setPalette(palette);
+    slotFind();
+}
+
+void MainWindow::slotFind()
+{
+    QString findtxt("commitment");
+    if(findtxt.isEmpty())
+    {
+        QMessageBox::warning(this,tr("warning"),tr("No input"));
+    }
+    else
+    {
+        ui->textEdit->moveCursor(QTextCursor::Start);
+        if(!ui->textEdit->find(findtxt))
+        {
+            QMessageBox::StandardButton btn;
+            btn = QMessageBox::information(this,tr("Find"),"cannot find,"+findtxt+"\ntry again?",QMessageBox::Ok,QMessageBox::Abort);
+            if(btn == QMessageBox::Ok)
+            {
+                ui->textEdit->moveCursor(QTextCursor::Start);
+                slotFind();
+            }
+        }
+    }
 }
