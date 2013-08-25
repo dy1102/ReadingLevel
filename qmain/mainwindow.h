@@ -9,6 +9,7 @@
 #include <QVector>
 #include <iostream>
 #include <QListWidgetItem>
+#include "highlighter.h"
 
 
 
@@ -25,7 +26,6 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();  
 
-    void slotFind();
 private slots:
     void on_pushButton_clicked();
 
@@ -35,6 +35,11 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+
+//    void slotFind();
+
+    Highlighter *highlighter;
+
     QString m_ReadLine;
     int m_nlesson;//记录多少章节
 //    qint64 position;

@@ -8,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     m_nlesson=0;
     ui->horizontalSlider->setMinimum(0);
-    ui->horizontalSlider->setMaximum(6);
+    ui->horizontalSlider->setMaximum(7);
     ui->horizontalSlider->setValue(0);
     ui->horizontalSlider->setPageStep(1);
 
@@ -83,17 +83,65 @@ void MainWindow::on_listWidget_itemDoubleClicked(QListWidgetItem *item)
 
 void MainWindow::on_horizontalSlider_valueChanged(int value)
 {
-//    QString tmp=QString::number(value);
-//    ui->textEdit->setText(tmp);
-
-    QPalette palette = ui->textEdit->palette();
-    palette.setColor(QPalette::Highlight, QColor::fromRgb(51, 153, 255)); //天蓝色
-    palette.setColor(QPalette::HighlightedText, QColor::fromRgb(255, 255, 255)); //白色
-    palette.setColor(QPalette::Text,QColor::fromRgb(139,139,0));
-    ui->textEdit->setPalette(palette);
-    slotFind();
+    highlighter = new Highlighter(ui->textEdit->document());
+    switch(value)
+    {
+        case 0:
+            break;
+        case 1:
+            {
+                QStringList wordlist;
+                wordlist << "Arial" << "on" << "in" << "to";
+                highlighter->setTextQueue(wordlist);
+            }
+        case 2:
+            {
+                QStringList wordlist;
+                wordlist << "Arial" << "on" << "in" << "to";
+                highlighter->setTextQueue(wordlist);
+            }
+        case 3:
+            {
+                QStringList wordlist;
+                wordlist << "Arial" << "on" << "in" << "to";
+                highlighter->setTextQueue(wordlist);
+            }
+        case 4:
+            {
+                QStringList wordlist;
+                wordlist << "Arial" << "on" << "in" << "to";
+                highlighter->setTextQueue(wordlist);
+            }
+        case 5:
+            {
+                QStringList wordlist;
+                wordlist << "Arial" << "on" << "in" << "to";
+                highlighter->setTextQueue(wordlist);
+            }
+        case 6:
+            {
+                QStringList wordlist;
+                wordlist << "Arial" << "on" << "in" << "to";
+                highlighter->setTextQueue(wordlist);
+            }
+    }
+//    if(value==3)
+//    {
+//    QStringList wordlist;
+//         wordlist << "Arial" << "on" << "in" << "to";
+//    highlighter->setTextQueue(wordlist);
+//    }
+//    if(value==0)
+//        ;
+//    QPalette palette = ui->textEdit->palette();
+//    palette.setColor(QPalette::Highlight, QColor::fromRgb(51, 153, 255)); //天蓝色
+//    palette.setColor(QPalette::HighlightedText, QColor::fromRgb(255, 255, 255)); //白色
+//    palette.setColor(QPalette::Text,QColor::fromRgb(139,139,0));
+//    ui->textEdit->setPalette(palette);
+//    slotFind();
 }
 
+/*slotFind()查找
 void MainWindow::slotFind()
 {
     QString findtxt("commitment");
@@ -116,3 +164,4 @@ void MainWindow::slotFind()
         }
     }
 }
+****************************/
