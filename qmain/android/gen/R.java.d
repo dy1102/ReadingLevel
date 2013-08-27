@@ -1,0 +1,24 @@
+C:\adt-bundle-windows-x86-20130729\projects\qmain\android\gen\org\qtproject\example\qmain\R.java \
+ : C:\adt-bundle-windows-x86-20130729\projects\qmain\android\res\layout\splash.xml \
+C:\adt-bundle-windows-x86-20130729\projects\qmain\android\res\values\libs.xml \
+C:\adt-bundle-windows-x86-20130729\projects\qmain\android\res\values\strings.xml \
+C:\adt-bundle-windows-x86-20130729\projects\qmain\android\res\values-de\strings.xml \
+C:\adt-bundle-windows-x86-20130729\projects\qmain\android\res\values-el\strings.xml \
+C:\adt-bundle-windows-x86-20130729\projects\qmain\android\res\values-es\strings.xml \
+C:\adt-bundle-windows-x86-20130729\projects\qmain\android\res\values-et\strings.xml \
+C:\adt-bundle-windows-x86-20130729\projects\qmain\android\res\values-fa\strings.xml \
+C:\adt-bundle-windows-x86-20130729\projects\qmain\android\res\values-fr\strings.xml \
+C:\adt-bundle-windows-x86-20130729\projects\qmain\android\res\values-id\strings.xml \
+C:\adt-bundle-windows-x86-20130729\projects\qmain\android\res\values-it\strings.xml \
+C:\adt-bundle-windows-x86-20130729\projects\qmain\android\res\values-ja\strings.xml \
+C:\adt-bundle-windows-x86-20130729\projects\qmain\android\res\values-ms\strings.xml \
+C:\adt-bundle-windows-x86-20130729\projects\qmain\android\res\values-nb\strings.xml \
+C:\adt-bundle-windows-x86-20130729\projects\qmain\android\res\values-nl\strings.xml \
+C:\adt-bundle-windows-x86-20130729\projects\qmain\android\res\values-pl\strings.xml \
+C:\adt-bundle-windows-x86-20130729\projects\qmain\android\res\values-pt-rBR\strings.xml \
+C:\adt-bundle-windows-x86-20130729\projects\qmain\android\res\values-ro\strings.xml \
+C:\adt-bundle-windows-x86-20130729\projects\qmain\android\res\values-rs\strings.xml \
+C:\adt-bundle-windows-x86-20130729\projects\qmain\android\res\values-ru\strings.xml \
+C:\adt-bundle-windows-x86-20130729\projects\qmain\android\res\values-zh-rCN\strings.xml \
+C:\adt-bundle-windows-x86-20130729\projects\qmain\android\res\values-zh-rTW\strings.xml \
+C:\adt-bundle-windows-x86-20130729\projects\qmain\android\bin\AndroidManifest.xml \

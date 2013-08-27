@@ -39,7 +39,7 @@ public:
     QPushButton *pushButton;
     QLabel *label;
     QListWidget *listWidget;
-    QWidget *widget;
+    QWidget *layoutWidget1;
     QGridLayout *gridLayout_2;
     QPushButton *pushButton_2;
     QVBoxLayout *verticalLayout;
@@ -53,7 +53,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(389, 369);
+        MainWindow->resize(479, 368);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         layoutWidget = new QWidget(centralWidget);
@@ -85,15 +85,15 @@ public:
 
         gridLayout->addWidget(listWidget, 1, 0, 1, 1);
 
-        widget = new QWidget(centralWidget);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(121, 3, 258, 331));
-        gridLayout_2 = new QGridLayout(widget);
+        layoutWidget1 = new QWidget(centralWidget);
+        layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
+        layoutWidget1->setGeometry(QRect(121, 3, 341, 331));
+        gridLayout_2 = new QGridLayout(layoutWidget1);
         gridLayout_2->setSpacing(6);
         gridLayout_2->setContentsMargins(11, 11, 11, 11);
         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
         gridLayout_2->setContentsMargins(0, 0, 0, 0);
-        pushButton_2 = new QPushButton(widget);
+        pushButton_2 = new QPushButton(layoutWidget1);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
 
         gridLayout_2->addWidget(pushButton_2, 0, 0, 1, 1);
@@ -101,12 +101,12 @@ public:
         verticalLayout = new QVBoxLayout();
         verticalLayout->setSpacing(6);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        label_2 = new QLabel(widget);
+        label_2 = new QLabel(layoutWidget1);
         label_2->setObjectName(QStringLiteral("label_2"));
 
         verticalLayout->addWidget(label_2);
 
-        horizontalSlider = new QSlider(widget);
+        horizontalSlider = new QSlider(layoutWidget1);
         horizontalSlider->setObjectName(QStringLiteral("horizontalSlider"));
         horizontalSlider->setOrientation(Qt::Horizontal);
 
@@ -115,7 +115,7 @@ public:
 
         gridLayout_2->addLayout(verticalLayout, 0, 1, 1, 1);
 
-        textEdit = new QTextEdit(widget);
+        textEdit = new QTextEdit(layoutWidget1);
         textEdit->setObjectName(QStringLiteral("textEdit"));
 
         gridLayout_2->addWidget(textEdit, 1, 0, 1, 2);
@@ -123,7 +123,7 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 389, 18));
+        menuBar->setGeometry(QRect(0, 0, 479, 18));
         MainWindow->setMenuBar(menuBar);
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QStringLiteral("statusBar"));
