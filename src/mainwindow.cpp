@@ -21,8 +21,8 @@ MainWindow::~MainWindow()
 void MainWindow::on_pushButton_clicked()
 {
 
-    //QFile file("nce4.txt");
-    QFile file("/sdcard/nce4.txt");
+    QFile file("nce4.txt");
+//    QFile file("/sdcard/nce4.txt");
     if(!file.open(QFile::ReadOnly|QFile::Text))
     {
         QMessageBox::information(this,"Information",tr("anything you want tell user"));
@@ -30,7 +30,6 @@ void MainWindow::on_pushButton_clicked()
     }
     QTextStream in(&file);
     QString LessonString("Lesson");
-    ui->label->setText("请稍等");
     while(!in.atEnd())
     {
         m_ReadLine=in.readLine();//从in中读一行
@@ -50,8 +49,8 @@ void MainWindow::on_pushButton_clicked()
 
 void MainWindow::on_listWidget_itemDoubleClicked(QListWidgetItem *item)
 {
-    //QFile file("nce4.txt");
-    QFile file("/sdcard/nce4.txt");
+    QFile file("nce4.txt");
+//    QFile file("/sdcard/nce4.txt");
     if(!file.open(QFile::ReadOnly|QFile::Text))
     {
         QMessageBox::information(this,"Information",tr("anything you want tell user"));
@@ -90,8 +89,8 @@ void MainWindow::on_listWidget_itemDoubleClicked(QListWidgetItem *item)
 void MainWindow::on_horizontalSlider_valueChanged(int value)
 {
     highlighter = new Highlighter(ui->textEdit->document());
-    //QFile file("nce4_words");
-    QFile file("/sdcard/nce4_words");
+    QFile file("nce4_words");
+//    QFile file("/sdcard/nce4_words");
     if(!file.open(QFile::ReadOnly|QFile::Text))
     {
         QMessageBox::information(this,"Information",tr("anything you want tell user"));
